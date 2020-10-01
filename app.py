@@ -125,8 +125,4 @@ html = HTML(
     xmlns="http://www.w3.org/1999/xhtml"
 )
 
-# html = HTML(class_name="html_styles", id="html", xmlns="http://www.w3.org/1999/xhtml")
-
-# Testing
-
 print(html.get_html())
