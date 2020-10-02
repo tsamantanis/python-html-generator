@@ -3,9 +3,7 @@ from component import Component
 from html import HTML
 from link import Link
 from meta import Meta
-
-# Create styles instance
-styles = ""
+from style import Style
 
 # Create Meta instance
 meta = Meta(
@@ -22,10 +20,10 @@ link_styles = Link(
     tag="link",
     class_name="",
     id="link_styles",
-    href=styles,
+    href="",
     rel="stylesheet",
     referrerpolicy="noreferrer",
-    crossorigin="anonymous"
+    type="text/css"
 )
 link_comfortaa = Link(
     tag="link",
@@ -34,7 +32,7 @@ link_comfortaa = Link(
     href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap",
     rel="stylesheet",
     referrerpolicy="noreferrer",
-    crossorigin="anonymous"
+    type=""
 )
 link_montserrat = Link(
     tag="link",
@@ -42,7 +40,8 @@ link_montserrat = Link(
     id="link_montserrat",
     href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap",
     rel="stylesheet",
-    referrerpolicy="noreferrer", crossorigin="anonymous"
+    referrerpolicy="noreferrer",
+    type=""
 )
 link_raleway = Link(
     tag="link",
@@ -51,7 +50,7 @@ link_raleway = Link(
     href="https://fonts.googleapis.com/css2?family=Raleway&display=swap",
     rel="stylesheet",
     referrerpolicy="noreferrer",
-    crossorigin="anonymous"
+    type=""
 )
 
 # Create Head instance
@@ -69,9 +68,6 @@ nav = Component(
     id="nav",
     content=""
 )
-
-# Create Body instance
-# body = Body(tag="body", class_name="body_styles", id="body", content=[])
 
 # Create P instances
 p = Component(
@@ -95,6 +91,13 @@ p2 = Component(
     content="even though I was initially created in Python"
 )
 
+p_style_properties = {
+    "font-size": "18",
+    "font-weight": "600",
+    "color": "blue"
+}
+p_styles = Style(p.tag, p_style_properties)
+
 p.update_content("Hello, my name is Ducky!")
 p1.update_content("I am somehow found in this html code,")
 p2.update_content("even though I was initially created in Python!")
@@ -112,7 +115,7 @@ body = Component(
     tag="body",
     class_name="",
     id="body_styles",
-    content=[div]
+    content=[nav, div]
 )
 
 # Create HTML instance
@@ -125,4 +128,7 @@ html = HTML(
     xmlns="http://www.w3.org/1999/xhtml"
 )
 
-print(html.get_html())
+link_styles.set_href("styles.css")
+
+html.to_file("test.html")
+p_styles.to_file("styles.css")

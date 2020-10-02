@@ -19,3 +19,9 @@ class Component():
     def update_content(self, content):
         """Update component content"""
         self._content = content
+
+    def to_file(self, filename):
+        """Create html file and print get_html content in it"""
+        file = open(filename,"w+")
+        file.write(self.get_html())
+        file.close()

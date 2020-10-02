@@ -7,6 +7,18 @@ class Ref(ABC):
         self._rel = rel
         self._referrerpolicy = referrerpolicy
 
+    def set_href(self, href):
+        """Sets href attribute value"""
+        self._href = href
+
+    def set_rel(self, rel):
+        """Sets rel attribute value"""
+        self._rel = rel
+
+    def set_referrerpolicy(self, referrerpolicy):
+        """Sets referrerpolicy attribute value"""
+        self._referrerpolicy = referrerpolicy
+
     def get_href(self):
         """Returns href attribute value"""
         return self._href
