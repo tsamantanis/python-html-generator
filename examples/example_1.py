@@ -132,5 +132,5 @@ html = HTML(
 
 link_styles.set_href("styles.css")
 
-html.to_file("test.html")
+html.to_file("example_1.html")
 p_styles.to_file("styles.css")
