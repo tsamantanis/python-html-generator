@@ -186,12 +186,26 @@ section_2 = Component(
     ]
 )
 
+footer = Component(
+    tag="footer",
+    class_name="",
+    id="footer",
+    content=[
+        Component(
+            tag="div",
+            class_name="",
+            id="footer_div",
+            content="Copyright 2020 @ Philippos Tsamantanis"
+        )
+    ]
+)
+
 # Create Body instance
 body = Component(
     tag="body",
     class_name="",
     id="body_styles",
-    content=[nav, section_1, section_2]
+    content=[nav, section_1, section_2, footer]
 )
 
 # Create HTML instance
@@ -223,7 +237,7 @@ body_styles = Style(body.tag, {
     "align-items": "center",
     "margin": "auto",
     "margin-top": "20px",
-    "min-height": "100vh",
+    "min-height": "100vh"
 })
 
 nav_styles = Style(nav.tag, {
@@ -249,7 +263,7 @@ nav_a_styles = Style(nav.tag + "  a", {
     "color": "white",
     "text-decoration": "none",
     "line-height": "1.65",
-    "display": "block",
+    "display": "block"
 })
 
 logo = Style(".logo", {
@@ -282,7 +296,7 @@ bg_green_hover = Style(".bg-green-hover:hover", {
 button_header = Style(".button-header", {
     "background-color": "white",
     "color": "#229954",
-    "transition": "0.3s ease",
+    "transition": "0.3s ease"
 })
 
 section_styles = Style("section", {
@@ -297,7 +311,24 @@ section_2_styles = Style(".section_2", {
 
 img_styles = Style(".img_styles", {
     "border-radius": "10px",
-    "box-shadow": "0 4px 8px 0 rgba(0,0,0,0.2)",
+    "box-shadow": "0 4px 8px 0 rgba(0,0,0,0.2)"
+})
+
+footer_styles = Style(footer.tag, {
+    "width": "100%",
+    "padding": "0",
+    "margin": "0",
+    "height": "40px",
+    "display": "flex",
+    "justify-content": "center",
+    "align-items": "center",
+    "align-content": "center",
+    "background-color": "#229954",
+    "color": "white",
+    "position": "absolute",
+    "bottom": "0",
+    "left": "0",
+    "border-radius": "10px"
 })
 
 body_styles.add_to_file("styles.css")
@@ -311,3 +342,4 @@ button_header.add_to_file("styles.css")
 section_styles.add_to_file("styles.css")
 section_2_styles.add_to_file("styles.css")
 img_styles.add_to_file("styles.css")
+footer_styles.add_to_file("styles.css")
