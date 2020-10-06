@@ -3,6 +3,7 @@ sys.path.insert(1, '../source')
 from a import A
 from component import Component
 from html import HTML
+from img import Img
 from link import Link
 from meta import Meta
 from style import Style
@@ -164,7 +165,22 @@ section_2 = Component(
                     class_name="p_styles",
                     id="text_section_2",
                     content="It happens to be super cool"
-                )
+                ),
+                Img(
+                    tag="img",
+                    class_name="img_styles",
+                    id="img",
+                    src="https://images.theconversation.com/files/337593/original/file-20200526-106811-ql6d51.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop",
+                    alt="Llama Face",
+                    width="600",
+                    height="300"
+                ),
+                Component(
+                    tag="p",
+                    class_name="p_styles",
+                    id="text_section_2",
+                    content="Here's a llama ^ for no particular reason"
+                ),
             ]
         )
     ]
@@ -279,6 +295,11 @@ section_2_styles = Style(".section_2", {
     "border-radius": "10px"
 })
 
+img_styles = Style(".img_styles", {
+    "border-radius": "10px",
+    "box-shadow": "0 4px 8px 0 rgba(0,0,0,0.2)",
+})
+
 body_styles.add_to_file("styles.css")
 nav_styles.add_to_file("styles.css")
 nav_a_styles.add_to_file("styles.css")
@@ -289,3 +310,4 @@ bg_green_hover.add_to_file("styles.css")
 button_header.add_to_file("styles.css")
 section_styles.add_to_file("styles.css")
 section_2_styles.add_to_file("styles.css")
+img_styles.add_to_file("styles.css")

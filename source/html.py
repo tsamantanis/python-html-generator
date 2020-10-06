@@ -3,8 +3,8 @@ class HTML(Component):
     def __init__(self, tag, class_name, id, content, lang, xmlns):
         """Initialize HTML class instance with head and body properties"""
         super().__init__(tag, class_name, id, content)
-        self.lang = lang
-        self.xmlns = xmlns
+        self.__lang = lang
+        self.__xmlns = xmlns
 
     def get_html(self):
         """Override component get_html method to include unique properties"""
