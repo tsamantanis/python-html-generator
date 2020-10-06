@@ -16,12 +16,19 @@ class Component():
                 res += content.get_html() + "\n"
             return "<" + self.tag + " class=\"" + self.class_name + "\" id=\"" + self.id + "\"> \n" + res + "\n</" + self.tag + ">"
 
+    def get_content(self):
+        """Returns contents of the component"""
+        return self._content
+        
     def update_content(self, content):
         """Update component content"""
         self._content = content
 
     def to_file(self, filename):
         """Create html file and print get_html content in it"""
+        print("\n\nCreating HTML file...\n\n")
         file = open(filename,"w+")
+        print("Writing HTML to file...\n\n")
         file.write(self.get_html())
         file.close()
+        print("File creation complete!\n\n")

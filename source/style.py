@@ -14,12 +14,18 @@ class Style():
 
     def to_file(self, filename):
         """Create css file and print get_css content in it"""
+        print("\n\nOpening CSS file...\n\n")
         file = open(filename,"w+")
+        print("Updating CSS file...\n\n")
         file.write(self.get_css())
         file.close()
+        print("File update complete!\n\n")
 
     def add_to_file(self, filename):
         """Add content to existing to css file"""
+        print("\n\nCreating CSS file...\n\n")
         file = open(filename,"a")
+        print("Writing CSS to file...\n\n")
         file.write(self.get_css())
         file.close()
+        print("File creation complete!\n\n")
